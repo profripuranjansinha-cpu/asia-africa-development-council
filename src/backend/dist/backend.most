@@ -1,0 +1,43 @@
+// Version: 1.0.0
+type AboutContent__648949057 =
+  {about : Text; mission : Text; values : Text; vision : Text};
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Event__492135844 =
+  {date : Text; description : Text; location : Text; title : Text};
+type InquiryType__851780720 =
+  {#collaboration; #donation; #general; #membership};
+type Inquiry__931573009 =
+  {
+    email : Text;
+    inquiryType : InquiryType__851780720;
+    message : Text;
+    name : Text;
+    organization : Text;
+    timestamp : Time__900049286
+  };
+type Int__270357528 = Int__616954475;
+type Int__616954475 = Int;
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type Time__796480547 = Int__270357528;
+type Time__900049286 = Time__796480547;
+actor {
+  stable var aboutContent : ?AboutContent__648949057;
+  stable events :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Event__492135844]];
+      var elementIndex : Nat__490723111
+    };
+  stable inquiries :
+    {
+      var root : Node__46230540<Text, Inquiry__931573009>;
+      var size : Nat__490723111
+    }
+};

@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 100 900;
+  font-style: normal italic;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400 700;
+  font-style: normal italic;
+}
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+
+    /* Forest Green — primary brand */
+    --background: 0.97 0.008 95;
+    --foreground: 0.18 0.04 155;
+
+    --card: 0.99 0.004 95;
+    --card-foreground: 0.18 0.04 155;
+
+    --popover: 0.99 0.004 95;
+    --popover-foreground: 0.18 0.04 155;
+
+    /* Deep Forest Green */
+    --primary: 0.32 0.09 155;
+    --primary-foreground: 0.97 0.008 95;
+
+    /* Warm Gold */
+    --secondary: 0.78 0.12 75;
+    --secondary-foreground: 0.18 0.04 155;
+
+    /* Muted off-white */
+    --muted: 0.93 0.012 95;
+    --muted-foreground: 0.48 0.03 155;
+
+    /* Terracotta accent */
+    --accent: 0.62 0.14 38;
+    --accent-foreground: 0.97 0.008 95;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.018 155;
+    --input: 0.88 0.018 155;
+    --ring: 0.32 0.09 155;
+
+    --chart-1: 0.32 0.09 155;
+    --chart-2: 0.78 0.12 75;
+    --chart-3: 0.62 0.14 38;
+    --chart-4: 0.55 0.11 200;
+    --chart-5: 0.45 0.13 30;
+
+    --sidebar: 0.22 0.06 155;
+    --sidebar-foreground: 0.97 0.008 95;
+    --sidebar-primary: 0.78 0.12 75;
+    --sidebar-primary-foreground: 0.18 0.04 155;
+    --sidebar-accent: 0.28 0.07 155;
+    --sidebar-accent-foreground: 0.97 0.008 95;
+    --sidebar-border: 0.28 0.07 155;
+    --sidebar-ring: 0.78 0.12 75;
+  }
+
+  .dark {
+    --background: 0.14 0.04 155;
+    --foreground: 0.95 0.008 95;
+
+    --card: 0.18 0.05 155;
+    --card-foreground: 0.95 0.008 95;
+
+    --popover: 0.18 0.05 155;
+    --popover-foreground: 0.95 0.008 95;
+
+    --primary: 0.78 0.12 75;
+    --primary-foreground: 0.14 0.04 155;
+
+    --secondary: 0.24 0.06 155;
+    --secondary-foreground: 0.95 0.008 95;
+
+    --muted: 0.22 0.05 155;
+    --muted-foreground: 0.65 0.03 155;
+
+    --accent: 0.62 0.14 38;
+    --accent-foreground: 0.97 0.008 95;
+
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+
+    --border: 1 0 0 / 12%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.78 0.12 75;
+
+    --sidebar: 0.12 0.04 155;
+    --sidebar-foreground: 0.95 0.008 95;
+    --sidebar-primary: 0.78 0.12 75;
+    --sidebar-primary-foreground: 0.14 0.04 155;
+    --sidebar-accent: 0.18 0.05 155;
+    --sidebar-accent-foreground: 0.95 0.008 95;
+    --sidebar-border: 1 0 0 / 12%;
+    --sidebar-ring: 0.78 0.12 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Fraunces", serif;
+  }
+
+  .font-serif {
+    font-family: "Fraunces", serif;
+  }
+
+  .font-crimson {
+    font-family: "Lora", serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.22 0.08 155) 0%,
+      oklch(0.28 0.09 155) 40%,
+      oklch(0.32 0.07 140) 70%,
+      oklch(0.26 0.06 155) 100%
+    );
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.14 75) 0%,
+      oklch(0.82 0.13 80) 50%,
+      oklch(0.75 0.12 70) 100%
+    );
+  }
+
+  .section-gradient {
+    background: linear-gradient(
+      180deg,
+      oklch(0.97 0.008 95) 0%,
+      oklch(0.94 0.012 100) 100%
+    );
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px oklch(0.22 0.08 155 / 0.15);
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: oklch(0.78 0.12 75);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .pillar-card {
+    border-top: 4px solid;
+  }
+
+  .pillar-card-green {
+    border-top-color: oklch(0.32 0.09 155);
+  }
+
+  .pillar-card-gold {
+    border-top-color: oklch(0.78 0.12 75);
+  }
+
+  .pillar-card-terracotta {
+    border-top-color: oklch(0.62 0.14 38);
+  }
+
+  .pillar-card-teal {
+    border-top-color: oklch(0.55 0.11 200);
+  }
+}

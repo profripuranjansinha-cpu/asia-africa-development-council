@@ -1,0 +1,22 @@
+{
+  "overview": "The Asia Africa Development Council website is a professional international non-profit platform promoting sustainable development, peace, and innovation in alignment with the UN Sustainable Development Agenda 2030, African Union Agenda 2063, India Growth Index, and Vision India 2047.",
+  "features": [
+    "Multi-page organization website with Home, About, Services, Programs, News & Events, and Contact pages",
+    "Contact and partnership inquiry system with multiple inquiry types",
+    "Professional design with forest-green and gold color palette",
+    "Fully responsive layout for mobile, tablet, and desktop",
+    "Backend data storage for events and inquiry submissions"
+  ],
+  "category": "non-profit-organization",
+  "tags": [
+    "non-profit",
+    "organization",
+    "sustainable-development",
+    "peace",
+    "un-sdg",
+    "africa",
+    "asia",
+    "contact-form"
+  ],
+  "last_updated": "2026-04-26T08:54:59.948Z"
+}

@@ -1,0 +1,42 @@
+type Time = int;
+type InquiryType = 
+ variant {
+   collaboration;
+   donation;
+   general;
+   membership;
+ };
+type Inquiry = 
+ record {
+   email: text;
+   inquiryType: InquiryType;
+   message: text;
+   name: text;
+   organization: text;
+   timestamp: Time;
+ };
+type Event = 
+ record {
+   date: text;
+   description: text;
+   location: text;
+   title: text;
+ };
+type AboutContent = 
+ record {
+   about: text;
+   mission: text;
+   values: text;
+   vision: text;
+ };
+service : {
+  addEvent: (title: text, description: text, date: text, location: text) ->
+   ();
+  getAboutContent: () -> (AboutContent) query;
+  getEvents: () -> (vec Event) query;
+  getInquiries: () -> (vec Inquiry) query;
+  initializeContent: (mission: text, vision: text, about: text, values:
+   text) -> ();
+  submitInquiry: (name: text, email: text, organization: text, message: 
+   text, inquiryType: InquiryType) -> (Inquiry);
+}
